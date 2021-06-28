@@ -6,3 +6,5 @@ unzip terraform_1.0.1_linux_amd64.zip
 export PATH=$PATH:/opt/
 
 ```
+
+Note : Either generate ssh-keygen or copy the .pem file into /opt location.
