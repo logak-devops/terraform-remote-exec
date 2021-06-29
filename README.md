@@ -39,7 +39,12 @@ Then build the image and push into ecr with aws push commands
    }
    
    
-  Step 2 ==> Autoscaling group launches EC2 instances that will join in cluster
+  Step 2 ==> Load balancer creation
+             A load balancer serves as the single point of contact for clients. 
+             The load balancer distributes incoming application traffic across multiple targets, such as EC2 instances, in multiple Availability Zones. 
+             It consists of Listeners, Rules, Target Groups & Targets.
+             A listener checks for connection requests from clients, using the protocol and port that you configure. 
+             Rules determine how the listener routes requests to its registered targets within specified target groups. 
   
   Step3 ==> Before the docker app can be launched , a task definition needs to be provided
   The task defnition describes what docker container to be run on the cluster
@@ -62,8 +67,5 @@ Then build the image and push into ecr with aws push commands
 
 
 
-# Task definition : 
 
-
-myapp.tf    and templates/app.json.tpl
 
