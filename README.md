@@ -23,11 +23,8 @@ Then build the image and push into ecr with aws push commands
 ```
 
 # ECS --> EC2 Container Service will manage your docker containers
-  For that we just need to start an autoscaling group with custom AMI
-  
-   This customer AMI contains the ECS Agent
    
-  Once the ECS cluster is online, task and services can be started on cluster
+   Once the ECS cluster is online, task and services can be started on cluster
   
   Cluster is group of EC2 instance. and ECS Service will manage this server
   
@@ -64,8 +61,3 @@ Then build the image and push into ecr with aws push commands
       Running multiple instance with ELB allows you to have High availabilty
       
  ```
-
-
-
-
-
