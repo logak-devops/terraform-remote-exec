@@ -1,4 +1,6 @@
 ```
+
+Link: https://medium.com/@bradford_hamilton/deploying-containers-on-amazons-ecs-using-fargate-and-terraform-part-2-2e6f6a3a957f
 provider "aws" {
    region = "us-east-1"
    shared_credentials_file = "/root/.aws/credential"
