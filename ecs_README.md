@@ -22,8 +22,13 @@ output "demo-repo-url" {
    docker tag ${image_id} ${aws_account_id}.dkr.ecr.${region}.amazonaws.com/${repository-name}:${image_tag}
    docker push ${aws_account_id}.dkr.ecr.${region}.amazonaws.com/${repository-name}
 ```
-```
+
 Amazon's Elastic Container Service, just like kubernetes, helps to manage containers. With ECS, you only have define a few resources and ECS takes care of the rest, in terms of auto-scaling, using the load-balancer, and also deciding when to spin up new tasks depending on the traffic on one or any of the existing containers.
+
+
+An internet gateway is a service that allows for internet traffic to actually enter into a VPC. Otherwise, a VPC is completely segmented off and then the only way to get to it is potentially through a VPN connection rather than through an internet connection.
+
+An Internet Gateway is a logical connection between an AWS VPC and the Internet. It is not a physical device. Each VPC has only one Internet Gateway. If a VPC doesn’t have an Internet Gateway, then the resources cannot be accessed from the Internet. Conversely, resources within your VPC need an Internet Gateway to access the Internet.
 
 Below are the resources that ECS needs to be defined:
 
@@ -39,7 +44,6 @@ This defines the how many instances of the task_definition we want to run, we pr
 Cluster :
 This is ultimate component for ECS. A cluster can contain multiple ecs_services, with each service running multiple instances of the task_definition. Having a service of launch_type FARGATE means ECS gets to manage for you cluster and service optmization and resource utilization. In case one of the tasks fails within a cluster, ECS will automatically spin up a new task with same cpu and memory allocation defined in the task_definition
 
-```
 
 
 ```
