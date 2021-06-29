@@ -59,3 +59,11 @@ Then build the image and push into ecr with aws push commands
       Running multiple instance with ELB allows you to have High availabilty
       
  ```
+
+
+
+# Task definition : 
+
+
+myapp.tf    and templates/app.json.tpl
+
