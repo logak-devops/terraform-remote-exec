@@ -1,24 +1,12 @@
 Scan Private Image
-The previous step scanned images from the public Docker Registry, but the same can be done for private Docker Registries.
+==================
 
-Start a simple registry using,
-	 docker run -d --name registry -p 5000:5000 registry:2
+```
+docker run -d --name db arminc/clair-db:latest
+docker run -d --link db:postgres --name clair arminc/clair-local-scan:v2.0.6
+docker run --rm  -v /var/run/docker.sock:/var/run/docker.sock --network=container:clair ovotech/clair-scanner clair-scanner 932709730335.dkr.ecr.us-east-1.amazonaws.com/ecs-nodejs/home:latest
+```
+![image](https://user-images.githubusercontent.com/84037413/125349849-f1008300-e355-11eb-9e71-678e5acc6555.png)
 
-This will be made available via the Katacoda Proxy. Tag an existing Docker Image with the newly started Registry URL.
 
-	docker tag postgres:latest 2886795279-5000-simba08.environments.katacoda.com/postgres:latest
 
-Once tagged, the Image can be pushed to the Registry.
-
-	docker push 2886795279-5000-simba08.environments.katacoda.com/postgres:latest
-
-In the same way, the private registry image can now be scanned.
-
-CLAIR_ADDR=http://localhost:6060 \
-  CLAIR_OUTPUT=Low CLAIR_THRESHOLD=10 \
-  klar 2886795279-5000-simba08.environments.katacoda.com/postgres:latest
-  
-  
-  CLAIR_ADDR=http://localhost:8000 \
-    CLAIR_OUTPUT=Low CLAIR_THRESHOLD=10 \
-    klar 932709730335.dkr.ecr.us-east-1.amazonaws.com/ecs-nodejs/home:latest
