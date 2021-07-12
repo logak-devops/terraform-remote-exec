@@ -31,3 +31,21 @@
        we can increase the count by two three four. When the load is increasing when there is a lot of request from frontend our load balancer delivers
        the traffic to running container eqaully.
 ```
+
+
+# ECS with WebACL:
+
+>> Create Loadbalncer for container image
+
+![image](https://user-images.githubusercontent.com/84037413/125291239-1327e000-e319-11eb-8275-1a2eb5e818bc.png)
+
+Free rule setup:
+![image](https://user-images.githubusercontent.com/84037413/125291775-aeb95080-e319-11eb-9395-3ee762d6da0c.png)
+![image](https://user-images.githubusercontent.com/84037413/125291851-c09af380-e319-11eb-9e95-848b220e06e6.png)
+
+![image](https://user-images.githubusercontent.com/84037413/125292182-1e2f4000-e31a-11eb-9c2f-a77dbef9f238.png)
+![image](https://user-images.githubusercontent.com/84037413/125292450-63537200-e31a-11eb-8f7f-54a96d3308f2.png)
+
+
+
+
